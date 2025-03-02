@@ -1,0 +1,36 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("digite a quantidade de elementos no vetor: ");
+        int n = int.Parse(Console.ReadLine());
+
+        double[] vetor = new double[n];
+
+        Console.WriteLine("digite os elementos do vetor:");
+        for (int i = 0; i < n; i++)
+        {
+            vetor[i] = double.Parse(Console.ReadLine());
+        }
+
+        double soma = 0;
+        for (int i = 0; i < n; i++)
+        {
+            soma += vetor[i];
+        }
+        double media = soma / n;
+
+        Console.WriteLine($"média aritmética: {media}");
+
+        Console.WriteLine("elementos abaixo da média:");
+        for (int i = 0; i < n; i++)
+        {
+            if (vetor[i] < media)
+            {
+                Console.WriteLine(vetor[i]);
+            }
+        }
+    }
+}
