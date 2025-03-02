@@ -1,0 +1,46 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("digite a quantidade de números: ");
+        int n = int.Parse(Console.ReadLine());
+
+        int[] vetor = new int[n];
+
+        int quantidadePares = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            Console.Write($"digite o número {i + 1}: ");
+            vetor[i] = int.Parse(Console.ReadLine());
+
+            if (vetor[i] % 2 == 0)
+            {
+                quantidadePares++;
+            }
+        }
+
+        int[] pares = new int[quantidadePares];
+        int indicePar = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (vetor[i] % 2 == 0)
+            {
+                pares[indicePar] = vetor[i];
+                indicePar++;
+            }
+        }
+
+        Console.WriteLine("números pares:");
+        for (int i = 0; i < quantidadePares; i++)
+        {
+            Console.Write($"{pares[i]} ");
+        }
+        Console.WriteLine();
+
+        Console.WriteLine($"quantidade de números pares: {quantidadePares}");
+    }
+}
